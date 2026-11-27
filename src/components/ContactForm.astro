@@ -1,9 +1,9 @@
 ---
 /**
- * A form with visible labels. GitHub Pages can't receive form posts, so sending opens the
- * visitor's email app with the message filled in (see scripts/mailto-forms.ts).
+ * A form with visible labels. Messages are delivered by Web3Forms when an access key is set in
+ * FORMS (src/data/site.ts); otherwise sending opens the visitor's email app (see scripts/forms.ts).
  */
-import { CONTACT } from '../data/site';
+import { CONTACT, FORMS } from '../data/site';
 
 export interface Field {
   name: string;
@@ -33,8 +33,23 @@ for (let i = 0; i < fields.length; i++) {
   else rows.push([fields[i]]);
 }
 const hasRequired = fields.some((f) => f.required);
+const sendsDirectly = Boolean(FORMS.web3formsKey);
 ---
-<form class="form" data-subject={subject} action={`mailto:${CONTACT.email}`} method="post" enctype="text/plain">
+<form
+  class="form"
+  data-subject={subject}
+  action={sendsDirectly ? FORMS.endpoint : `mailto:${CONTACT.email}`}
+  method="post"
+  enctype={sendsDirectly ? undefined : 'text/plain'}
+>
+  {sendsDirectly && (
+    <>
+      <input type="hidden" name="access_key" value={FORMS.web3formsKey} />
+      <input type="hidden" name="subject" value={`Website: ${subject}`} />
+    </>
+  )}
+  <!-- Spam trap: hidden from people and screen readers; bots that tick it are rejected. -->
+  <input class="trap" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
   {hasRequired && <p class="form-note">Fields marked <span class="req" aria-hidden="true">*</span> (required) must be filled in.</p>}
   {rows.map((row) => (
     <div class={row.length > 1 ? 'form-row' : undefined}>
@@ -58,13 +73,16 @@ const hasRequired = fields.some((f) => f.required);
     </div>
   ))}
   <p class="form-note">
-    Choosing “{submitLabel}” opens your email app with your message ready to send to {CONTACT.email}.
+    {sendsDirectly
+      ? `Choosing “${submitLabel}” sends your message to the We Stand 4 Something team.`
+      : `Choosing “${submitLabel}” opens your email app with your message ready to send to ${CONTACT.email}.`}
     You can also call us at <a href={`tel:${CONTACT.phone}`}>{CONTACT.phoneDisplay}</a>.
   </p>
   <div><button class="btn btn-primary" type="submit">{submitLabel}</button></div>
+  <div class="form-status" role="status" tabindex="-1" hidden></div>
 </form>
 
 <script>
-  import { initMailtoForms } from '../scripts/mailto-forms';
-  initMailtoForms();
+  import { initForms } from '../scripts/forms';
+  initForms();
 </script>

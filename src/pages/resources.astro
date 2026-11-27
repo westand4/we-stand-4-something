@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import PageIntro from '../components/PageIntro.astro';
 import { RESOURCE_GROUPS, displayHost } from '../data/resources';
-import { url, wix } from '../lib/site';
+import { localize, url, wix } from '../lib/site';
 ---
 <Base title="Resources" current="resources/" description="Delaware agencies, programs and guides for people with disabilities and their families, grouped by topic.">
   <PageIntro title="Resources for Delawareans">
@@ -37,7 +37,7 @@ import { url, wix } from '../lib/site';
                     <h3>{r.name}</h3>
                     <p>{r.description}</p>
                     <p class="resource-link">
-                      <a href={r.url}>
+                      <a href={localize(r.url)}>
                         {r.pdf ? 'Open the guide' : 'Visit the website'}<span class="visually-hidden">: {r.name}</span>
                       </a>
                       <span class="resource-host">{r.pdf ? 'PDF document' : displayHost(r.url)}</span>

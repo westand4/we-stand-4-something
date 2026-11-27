@@ -56,6 +56,27 @@ export const DONATE = {
   label: 'Donate online through Zeffy',
 } as const;
 
+/**
+ * Microsoft Forms owned by the organisation's Microsoft 365 account. When a link is set here,
+ * the matching page shows a button that opens the Microsoft form instead of the on-page form.
+ * Leave a link empty to keep the on-page form for that page.
+ */
+export const MS_FORMS = {
+  feedback: 'https://forms.cloud.microsoft/r/nbQeiRJrHK',
+  eventRegistration: '',
+  groupSignup: '',
+} as const;
+
+/**
+ * Form delivery through Web3Forms (https://web3forms.com), free for 250 messages a month.
+ * Paste the access key that Web3Forms emails you here. It is designed to be public, so it is
+ * safe to keep in this file. While it is empty, forms open the visitor's email app instead.
+ */
+export const FORMS = {
+  web3formsKey: 'd9d084f3-579c-4515-927d-adf425b2e0d6',
+  endpoint: 'https://api.web3forms.com/submit',
+} as const;
+
 export const SOCIAL = [
   { name: 'Instagram', href: 'https://www.instagram.com/westand4somthing/', icon: '8d6893330740455c96d218258a458aa4.png' },
   { name: 'X (Twitter)', href: 'https://twitter.com/4Westand', icon: '9c4b521dd2404cd5a05ed6115f3a0dc8.png' },
