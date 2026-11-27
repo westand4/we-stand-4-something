@@ -101,5 +101,7 @@ To serve it at westand4something.org:
 ## Notes
 
 - Images still load from the Wix image CDN (`static.wixstatic.com`). If the Wix site is closed, download them into `public/` and update the paths.
-- Forms open the visitor's email app with a message to info@westand4something.org, since GitHub Pages can't process form submissions.
+- Forms (Feedback, Events registration, Services group sign-ups) are delivered by [Web3Forms](https://web3forms.com), free for
+  250 messages a month. Put the access key Web3Forms emails you in `FORMS.web3formsKey` in `src/data/site.ts` (the key is
+  designed to be public). Until a key is set, forms open the visitor's email app instead.
 - The Donate button uses the Friday Feast donation form on Zeffy. Put a general donation link in `DONATE` in `src/data/site.ts` when you have one.
