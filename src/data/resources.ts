@@ -9,7 +9,10 @@ export interface Resource {
   url: string;
   /** True when the link opens a PDF document. */
   pdf?: boolean;
-  /** Wix media path for the organisation's logo. */
+  /**
+   * The organisation's logo: either a file in this repository under public/ (starting with "images/"),
+   * or a path on the old Wix image CDN.
+   */
   logo: string;
 }
 
@@ -85,6 +88,13 @@ export const RESOURCE_GROUPS: ResourceGroup[] = [
           'A state council that works to change laws, systems and policies so people with developmental disabilities and their families can take part fully in their communities.',
         url: 'https://ddc.delaware.gov/',
         logo: 'f45d39_db45f4c8bf184859bf41cbad3e4db663~mv2.png/v1/fill/w_474,h_284,al_c,lg_1,q_85/agency-logo.png',
+      },
+      {
+        name: 'Disability Rights Delaware',
+        description:
+          'Free legal help and advocacy for children and adults with disabilities, including special education, Medicaid and Medicare, housing and workplace accommodations, assistive technology and voting access. Delaware’s official Protection and Advocacy agency, run by Community Legal Aid Society, Inc. (CLASI).',
+        url: 'https://www.declasi.org/programs-and-units/disability-rights-services/',
+        logo: 'images/resources/clasi-logo.webp',
       },
     ],
   },
