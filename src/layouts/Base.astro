@@ -30,7 +30,7 @@ const fonts = 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:it
     <meta name="description" content={description} />
     <meta property="og:title" content={pageTitle(title)} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={wix('996292_29f929dcf65f4b76b7d5e6343b237bca~mv2.png')} />
+    <meta property="og:image" content={new URL(wix('996292_29f929dcf65f4b76b7d5e6343b237bca~mv2.png'), Astro.site ?? Astro.url).href} />
     <meta name="theme-color" content="#093F3E" />
     <link rel="icon" href={wix(`${LOGO}/v1/fill/w_64,h_64,al_c,q_85/favicon.png`)} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
