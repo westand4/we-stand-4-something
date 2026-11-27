@@ -1,0 +1,31 @@
+---
+/**
+ * Link to a form hosted by Microsoft Forms. It opens as its own full page (not embedded),
+ * which works better with zoom, screen readers and the visitor's own browser settings.
+ */
+import { CONTACT } from '../data/site';
+
+interface Props {
+  url: string;
+  /** Button text, e.g. "Open the feedback form". */
+  label: string;
+  /** What the form asks for, in one short sentence. */
+  summary?: string;
+}
+
+const { url, label, summary } = Astro.props;
+---
+<div class="external-form stack">
+  {summary && <p>{summary}</p>}
+  <p>
+    <a class="btn btn-primary btn-large" href={url}>{label}</a>
+  </p>
+  <p class="form-note">
+    The form opens on Microsoft Forms. You do not need a Microsoft account, and it works with screen readers and keyboards.
+    Your answers go to the We Stand 4 Something team.
+  </p>
+  <p class="form-note">
+    Prefer to talk or write? Call <a href={`tel:${CONTACT.phone}`}>{CONTACT.phoneDisplay}</a> or email
+    <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>.
+  </p>
+</div>

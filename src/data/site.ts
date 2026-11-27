@@ -57,6 +57,17 @@ export const DONATE = {
 } as const;
 
 /**
+ * Microsoft Forms owned by the organisation's Microsoft 365 account. When a link is set here,
+ * the matching page shows a button that opens the Microsoft form instead of the on-page form.
+ * Leave a link empty to keep the on-page form for that page.
+ */
+export const MS_FORMS = {
+  feedback: 'https://forms.cloud.microsoft/r/nbQeiRJrHK',
+  eventRegistration: '',
+  groupSignup: '',
+} as const;
+
+/**
  * Form delivery through Web3Forms (https://web3forms.com), free for 250 messages a month.
  * Paste the access key that Web3Forms emails you here. It is designed to be public, so it is
  * safe to keep in this file. While it is empty, forms open the visitor's email app instead.

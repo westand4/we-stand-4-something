@@ -2,6 +2,8 @@
 import Base from '../layouts/Base.astro';
 import PageIntro from '../components/PageIntro.astro';
 import ContactForm, { type Field } from '../components/ContactForm.astro';
+import ExternalForm from '../components/ExternalForm.astro';
+import { MS_FORMS } from '../data/site';
 
 const fields: Field[] = [
   { name: 'first', label: 'First name', type: 'text', required: true, autocomplete: 'given-name', pairWithNext: true },
@@ -23,7 +25,15 @@ const fields: Field[] = [
     <div class="container">
       <div class="panel" style="max-width:44rem">
         <h2 id="form-title">Contact us</h2>
-        <ContactForm id="feedback" subject="Website feedback" fields={fields} submitLabel="Send feedback" />
+        {MS_FORMS.feedback ? (
+          <ExternalForm
+            url={MS_FORMS.feedback}
+            label="Open the feedback form"
+            summary="Tell us what works, what doesn’t, or a resource we should add. The form asks for your name, how to reach you, and your feedback."
+          />
+        ) : (
+          <ContactForm id="feedback" subject="Website feedback" fields={fields} submitLabel="Send feedback" />
+        )}
       </div>
     </div>
   </section>
