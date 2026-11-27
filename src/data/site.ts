@@ -62,7 +62,7 @@ export const DONATE = {
  * safe to keep in this file. While it is empty, forms open the visitor's email app instead.
  */
 export const FORMS = {
-  web3formsKey: '',
+  web3formsKey: 'd9d084f3-579c-4515-927d-adf425b2e0d6',
   endpoint: 'https://api.web3forms.com/submit',
 } as const;
 
