@@ -31,7 +31,7 @@ import { url, wix } from '../lib/site';
               {g.resources.map((r) => (
                 <li class="resource">
                   <div class="resource-logo">
-                    <img src={wix(r.logo)} alt="" width="160" height="112" loading="lazy" />
+                    <img src={r.logo.startsWith('images/') ? url(r.logo) : wix(r.logo)} alt="" width="160" height="112" loading="lazy" />
                   </div>
                   <div class="resource-text">
                     <h3>{r.name}</h3>
