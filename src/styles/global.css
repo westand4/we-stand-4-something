@@ -238,7 +238,7 @@ a:hover { color: var(--teal-strong); text-decoration-thickness: 0.16em; }
 .toc ul { list-style: none; padding: 0; margin: 0; }
 .toc li + li { margin-top: 0.25rem; }
 .toc a { display: block; padding: 0.35rem 0; font-weight: 700; }
-.resource-group + .resource-group { margin-top: 3rem; }
+.resource-group + .resource-group { margin-top: 2.25rem; }
 .resource-group > h2 { padding-bottom: 0.5rem; border-bottom: 3px solid var(--lime); scroll-margin-top: 1rem; }
 .resource-list { list-style: none; padding: 0; margin: 0; }
 .resource { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: 1.5rem; align-items: start; padding-block: 1.5rem; }

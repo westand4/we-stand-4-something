@@ -21,8 +21,8 @@ export interface ResourceGroup {
 
 export const RESOURCE_GROUPS: ResourceGroup[] = [
   {
-    id: 'guides',
-    title: 'Guides and directories',
+    id: 'finding-services',
+    title: 'Finding services',
     resources: [
       {
         name: 'Delaware Disability Hub',
@@ -42,8 +42,8 @@ export const RESOURCE_GROUPS: ResourceGroup[] = [
     ],
   },
   {
-    id: 'housing-transport',
-    title: 'Housing and getting around',
+    id: 'housing',
+    title: 'Housing',
     resources: [
       {
         name: 'Handbook for Renters',
@@ -53,6 +53,12 @@ export const RESOURCE_GROUPS: ResourceGroup[] = [
         pdf: true,
         logo: 'f45d39_c14795d3ad5b49e6a1c885f660148fe7~mv2.png/v1/fill/w_510,h_380,al_c,lg_1,q_85/House-removebg-preview.png',
       },
+    ],
+  },
+  {
+    id: 'transportation',
+    title: 'Transportation',
+    resources: [
       {
         name: 'DART Paratransit',
         description:
@@ -64,7 +70,7 @@ export const RESOURCE_GROUPS: ResourceGroup[] = [
   },
   {
     id: 'rights',
-    title: 'Rights and advocacy',
+    title: 'Your rights and the ADA',
     resources: [
       {
         name: 'Mid-Atlantic ADA Center',
@@ -83,8 +89,8 @@ export const RESOURCE_GROUPS: ResourceGroup[] = [
     ],
   },
   {
-    id: 'support',
-    title: 'Support and community',
+    id: 'brain-injury',
+    title: 'Brain injury',
     resources: [
       {
         name: 'Traumatic Brain Injury Fund',
@@ -93,12 +99,24 @@ export const RESOURCE_GROUPS: ResourceGroup[] = [
         url: 'https://scpd.delaware.gov/brain-injury-funds.shtml',
         logo: 'f45d39_e219687224c343498d0e3be8ca6d015d~mv2.jpg/v1/fill/w_346,h_346,al_c,lg_1,q_80/SCPD-Logo.jpg',
       },
+    ],
+  },
+  {
+    id: 'autism',
+    title: 'Autism',
+    resources: [
       {
         name: 'Autism Delaware',
         description: 'A nonprofit supporting people with autism and their families across Delaware.',
         url: 'https://www.autismdelaware.org/about/autism-in-delaware/',
         logo: 'f45d39_953c5bcfa6284d16a500b58d8295ff76~mv2.png/v1/fill/w_302,h_302,al_c,q_85,usm_0.66_1.00_0.01/Autism-Delaware_edited.png',
       },
+    ],
+  },
+  {
+    id: 'fitness-social',
+    title: 'Fitness and social life',
+    resources: [
       {
         name: 'EPIC (Endless Possibilities in the Community)',
         description:
