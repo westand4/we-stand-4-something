@@ -42,6 +42,14 @@ import { localize, url, wix } from '../lib/site';
                       </a>
                       <span class="resource-host">{r.pdf ? 'PDF document' : displayHost(r.url)}</span>
                     </p>
+                    {r.extraLinks?.map((l) => (
+                      <p class="resource-link">
+                        <a href={localize(l.url)}>
+                          {l.label}<span class="visually-hidden">: {r.name}</span>
+                        </a>
+                        <span class="resource-host">{l.pdf ? 'PDF document' : displayHost(l.url)}</span>
+                      </p>
+                    ))}
                   </div>
                 </li>
               ))}
