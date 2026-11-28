@@ -108,7 +108,7 @@ export const RESOURCE_GROUPS: ResourceGroup[] = [
         name: 'Traumatic Brain Injury Fund',
         description:
           'Helps Delaware residents with a traumatic brain injury pay for things like home changes, assistive technology and medical equipment that other agencies don’t cover. Run by the State Council for Persons with Disabilities.',
-        url: 'https://scpd.delaware.gov/brain-injury-funds.shtml',
+        url: 'https://scpd.delaware.gov/brainToolkit/biFinAssist/index.shtml?dc=fundApp',
         logo: 'f45d39_e219687224c343498d0e3be8ca6d015d~mv2.jpg/v1/fill/w_346,h_346,al_c,lg_1,q_80/SCPD-Logo.jpg',
       },
     ],
