@@ -125,7 +125,7 @@ export const RESOURCE_GROUPS: ResourceGroup[] = [
         description:
           'Inclusive fitness and social programs in Newark for adults with intellectual, developmental or physical disabilities.',
         url: 'https://www.epicdelaware.org/',
-        logo: 'f45d39_069b81adcc4f4094aec4c3efb5d0905d~mv2.png/v1/fill/w_316,h_230,al_c,q_85,usm_0.66_1.00_0.01/EPIC-Logo_edited.png',
+        logo: '520a71_e47fedb92a274afa8e8060ffce801225~mv2.png',
       },
     ],
   },
