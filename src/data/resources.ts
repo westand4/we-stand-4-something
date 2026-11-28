@@ -9,6 +9,8 @@ export interface Resource {
   url: string;
   /** True when the link opens a PDF document. */
   pdf?: boolean;
+  /** More links shown under the main one, e.g. an application form. */
+  extraLinks?: { label: string; url: string; pdf?: boolean }[];
   /**
    * The organisation's logo: either a file in this repository under public/ (starting with "images/"),
    * or a path on the old Wix image CDN.
@@ -65,8 +67,15 @@ export const RESOURCE_GROUPS: ResourceGroup[] = [
       {
         name: 'DART Paratransit',
         description:
-          'Delaware’s paratransit bus service for people with disabilities and older adults. Apply online through DART.',
+          'Delaware’s paratransit bus service for people with disabilities and older adults. To sign up, fill in DART’s application form.',
         url: 'https://dartfirststate.com/services/para_services.shtml',
+        extraLinks: [
+          {
+            label: 'Get the application form',
+            url: 'https://www.dartfirststate.com/RiderInfo/Paratransit/pdfs/ADAForm.pdf',
+            pdf: true,
+          },
+        ],
         logo: 'f45d39_3c9f6a123f204a3c8ac51008f288276d~mv2.jpg/v1/fill/w_450,h_450,al_c,lg_1,q_80/DART.jpg',
       },
     ],
