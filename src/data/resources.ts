@@ -120,7 +120,7 @@ export const RESOURCE_GROUPS: ResourceGroup[] = [
       {
         name: 'Autism Delaware',
         description: 'A nonprofit supporting people with autism and their families across Delaware.',
-        url: 'https://www.autismdelaware.org/about/autism-in-delaware/',
+        url: 'https://www.autismdelaware.org/',
         logo: 'f45d39_953c5bcfa6284d16a500b58d8295ff76~mv2.png/v1/fill/w_302,h_302,al_c,q_85,usm_0.66_1.00_0.01/Autism-Delaware_edited.png',
       },
     ],
